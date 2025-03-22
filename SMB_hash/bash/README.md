@@ -1,4 +1,4 @@
-Here is a `README.md` file for the `export_hashes` script:
+
 
 ```markdown
 # Export Hashes Script
