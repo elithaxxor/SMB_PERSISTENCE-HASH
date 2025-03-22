@@ -1,6 +1,19 @@
-Change Log: --> This is the code used to grep the SMB hashes
-```c
+## SMB PERSISTANCE W, HASH GRAB (Your settting up the server and want whatever hashes are created) or existing) 
 
+#### Change Log: --> This is the code used to grep the SMB hashes
+
+```bash
+/*
+Build the program: make
+Clean build files: make clean
+Install system-wide: sudo make install
+Uninstall: sudo make uninstall
+*/
+```
+
+
+
+```c
 
 // Function to retrieve SMB hashes
 void get_smb_hashes() {
