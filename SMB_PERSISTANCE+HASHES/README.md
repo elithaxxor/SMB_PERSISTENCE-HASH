@@ -2,6 +2,22 @@
 
 This repository contains tools for managing SMB (Server Message Block) persistence and hash management, implemented in multiple programming languages for flexibility and different use cases. For instance, SMB  passwords are stored in a hashed smb db 
 
+### Python
+```
+sudo apt install python3-colorama
+sudo python3 smb_manager.py --install  # Configuration mode
+sudo python3 smb_manager.py --audit    # Enumeration mode
+```
+
+
+### C
+```
+gcc smb_manager.c -o smb_manager
+sudo ./smb_manager --install
+sudo ./smb_manager --audit
+```
+
+
 ## Features
 
 - Secure SMB setup and configuration
