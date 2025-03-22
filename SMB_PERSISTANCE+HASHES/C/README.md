@@ -1,4 +1,4 @@
-
+Change Log: --> This is the code used to grep the SMB hashes
 ```c
 
 
