@@ -176,7 +176,21 @@ get_smb_hashes() {
     # Check if any hashes were found
     if ! pdbedit -L -w 2>/dev/null | grep -q ':'; then
         echo "[-] No SMB hashes retrieved"
+        exit 0
     fi
+    # Add this before the final echo statements
+    echo "WARNING: Exporting password hashes should only be done for migration/backup purposes"
+    read -p "Continue? (yes/no) [no]: " CONFIRM
+    if [ "$CONFIRM" = "yes" ]; then
+        EXPORT_FILE="/root/samba_hashes_$(date +%s).txt"
+        pdbedit -L -w > "$EXPORT_FILE"
+        chmod 777 "$EXPORT_FILE"
+        echo "Hashes exported to $EXPORT_FILE (all-can- access)"
+    else
+        echo "Hash export aborted"
+    fi
+    exit 0
+fi
 }
 
 # Main execution
