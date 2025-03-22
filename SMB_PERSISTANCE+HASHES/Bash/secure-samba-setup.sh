@@ -3,6 +3,14 @@
 # Samba Secure Installation Script with Advanced Logging
 # Version 2.0 - Unified Implementation
 
+
+# Check root privileges
+if [[ $EUID -ne 0 ]]; then
+    echo "[-] This script must be run as root for hash extraction"
+    exit 1
+fi
+
+
 # Configuration
 LOG_DIR="/var/log/samba_install"
 LOG_FILE="$LOG_DIR/install_$(date +%Y%m%d%H%M%S).log"
