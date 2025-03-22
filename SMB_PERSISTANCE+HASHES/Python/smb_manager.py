@@ -9,6 +9,9 @@ from logging.handlers import RotatingFileHandler
 import logging
 from colorama import Fore, Style, init
 
+
+# TODO:   create a websocket that willl persist as time goes by, so more hashes are picked up 
+
 init(autoreset=True)
 LOG_FILE = "/var/log/smb_manager.log"
 MAX_LOG_SIZE = 5 * 1024 * 1024 * 1024  # 5GB
