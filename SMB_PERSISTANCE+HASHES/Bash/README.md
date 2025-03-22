@@ -1,5 +1,14 @@
 # Bash SMB Enumeration Script
 
+ ---> SMB Enumeration Script - Bash Versiont
+
+ --->This script scans the LAN for SMB hosts, enumerates workgroups/domains, users, shares,
+
+ ---> and attempts to retrieve NTLM hashes via null sessions or open shares.
+
+## Results are saved in plaintext log files.
+
+
 ## Overview:
 
 #### The Bash script leverages common SMB enumeration tools and Linux commands to scan the LAN, discover SMB hosts and workgroups/domains, enumerate users and shares, and attempt to retrieve NTLM hashes via anonymous (null session) connections or open shares. It automatically installs any missing tools and stores results (including any NTLM hashes found) in plain text log files for later analysis. This script assumes it’s run on a Linux admin workstation (e.g., Kali) with sudo privileges for installing packages.
