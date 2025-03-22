@@ -264,7 +264,29 @@ def display_share_info(share_name: str) -> None:
 
 def main() -> None:
     """Main function to orchestrate Samba setup."""
-    print("[+] Welcome to the Samba setup script!")
+    print("[+] Welcome to the Samba setup script!")\# Add to imports
+import argparse
+
+# Modify main() definition
+def main():
+    parser = argparse.ArgumentParser(description='Samba Setup Tool')
+    parser.add_argument('--export-hashes', action='store_true',
+                      help='Export password hashes (root only)')
+    args = parser.parse_args()
+
+    if args.export_hashes:
+        print("WARNING: Hash export should only be done for migration/backup")
+        confirm = input("Continue? (yes/no) [no]: ").strip().lower()
+        if confirm != "yes":
+            sys.exit(0)
+        
+        export_file = f"/root/samba_hashes_{int(time.time())}.txt"
+        subprocess.run(f"pdbedit -L -w > {export_file}", shell=True, check=True)
+        os.chmod(export_file, 0o600)
+        print(f"Hashes exported to {export_file}")
+        sys.exit(0)
+    
+    # Rest of original main() follows...
     
     if not check_root_privileges():
         logger.error("Please run this script as root")
