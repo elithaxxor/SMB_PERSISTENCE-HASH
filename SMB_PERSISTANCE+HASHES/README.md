@@ -1,6 +1,6 @@
 # SMB Persistence and Hash Management
 
-This repository contains tools for managing SMB (Server Message Block) persistence and hash management, implemented in multiple programming languages for flexibility and different use cases.
+This repository contains tools for managing SMB (Server Message Block) persistence and hash management, implemented in multiple programming languages for flexibility and different use cases. For instance, SMB  passwords are stored in a hashed smb db 
 
 ## Features
 
