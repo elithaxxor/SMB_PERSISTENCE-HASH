@@ -7,6 +7,8 @@
 #define MAX_CMD 1024
 #define LOG_FILE "/var/log/smb_manager.log"
 
+// TODO: Websocket the create a websocket that willl persist as time goes by, so more hashes are picked up 
+
 void log_message(const char* type, const char* message) {
     FILE* log = fopen(LOG_FILE, "a");
     if (log) {
