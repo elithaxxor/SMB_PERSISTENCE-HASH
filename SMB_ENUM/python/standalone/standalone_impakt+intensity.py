@@ -1,4 +1,4 @@
-rom enum import Enum
+from enum import Enum
 from impacket.smbconnection import SMBConnection
 from impacket.dcerpc.v5 import wkst, srvs
 
