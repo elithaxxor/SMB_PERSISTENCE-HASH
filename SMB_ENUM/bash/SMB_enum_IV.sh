@@ -5,7 +5,7 @@
 apt-get install smbclient enum4linux nmap smbmap -y
 
 # Target IP or range
-TARGET="192.168.1.0/24"
+TARGET="192.168.1.1/24"
 
 # Enumerate SMB shares and workgroups
 echo "Enumerating SMB shares and workgroups..."
