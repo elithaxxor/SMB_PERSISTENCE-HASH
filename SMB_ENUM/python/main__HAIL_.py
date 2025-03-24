@@ -2,6 +2,8 @@
 import curses
 import subprocess
 
+## SHOOTS EVERYTHING OFF AT ONCE 
+
 def run_script(script_path):
     try:
         subprocess.run(["python3", script_path], check=True)
